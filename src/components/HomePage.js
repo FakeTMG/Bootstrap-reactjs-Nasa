@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
 import axios from "axios";
 import first from "./25640_PIA24264-Perseverance_Sol3_Mastcam-Z_panorama-web6.jpg";
 import second from "./25689_PIA24487-web.jpg";
