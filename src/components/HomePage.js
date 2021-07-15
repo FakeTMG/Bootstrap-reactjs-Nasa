@@ -83,8 +83,7 @@ class HomePage extends Component {
         </nav>
         <div>
           <h1 className="test">Nasa News</h1>
-          {posts
-            .filter((val) => {
+          {posts.filter((val) => {
               if (searchTerm == "") {
                 return val;
               } else if (
@@ -92,8 +91,7 @@ class HomePage extends Component {
               ) {
                 return val;
               }
-            })
-            .map((val) => {
+            }).map((val) => {
               return (
                 <div className="container containero col-xs-3" key={val.date}>
                   <img alt="" className="img-rounded" src={val.url} />
