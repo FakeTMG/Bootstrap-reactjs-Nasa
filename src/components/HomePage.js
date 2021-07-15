@@ -84,7 +84,7 @@ class HomePage extends Component {
         <div>
           <h1 className="test">Nasa News</h1>
           {posts.filter((val) => {
-              if (searchTerm == "") {
+              if (searchTerm === "") {
                 return val;
               } else if (
                 val.title.toLowerCase().includes(searchTerm.toLowerCase())
