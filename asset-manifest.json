@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Bootstrap-reactjs-Nasa/static/css/main.d9ecadf9.chunk.css",
+    "main.js": "/Bootstrap-reactjs-Nasa/static/js/main.2bee5280.chunk.js",
+    "main.js.map": "/Bootstrap-reactjs-Nasa/static/js/main.2bee5280.chunk.js.map",
+    "runtime-main.js": "/Bootstrap-reactjs-Nasa/static/js/runtime-main.590b97b4.js",
+    "runtime-main.js.map": "/Bootstrap-reactjs-Nasa/static/js/runtime-main.590b97b4.js.map",
+    "static/js/2.19b62911.chunk.js": "/Bootstrap-reactjs-Nasa/static/js/2.19b62911.chunk.js",
+    "static/js/2.19b62911.chunk.js.map": "/Bootstrap-reactjs-Nasa/static/js/2.19b62911.chunk.js.map",
+    "static/js/3.0336d7eb.chunk.js": "/Bootstrap-reactjs-Nasa/static/js/3.0336d7eb.chunk.js",
+    "static/js/3.0336d7eb.chunk.js.map": "/Bootstrap-reactjs-Nasa/static/js/3.0336d7eb.chunk.js.map",
+    "index.html": "/Bootstrap-reactjs-Nasa/index.html",
+    "static/css/main.d9ecadf9.chunk.css.map": "/Bootstrap-reactjs-Nasa/static/css/main.d9ecadf9.chunk.css.map",
+    "static/js/2.19b62911.chunk.js.LICENSE.txt": "/Bootstrap-reactjs-Nasa/static/js/2.19b62911.chunk.js.LICENSE.txt",
+    "static/media/25689_PIA24487-web.2459e501.jpg": "/Bootstrap-reactjs-Nasa/static/media/25689_PIA24487-web.2459e501.jpg",
+    "static/media/25699_PIA24482-800.804a48d9.jpg": "/Bootstrap-reactjs-Nasa/static/media/25699_PIA24482-800.804a48d9.jpg",
+    "static/media/first_image.93d570e0.jpg": "/Bootstrap-reactjs-Nasa/static/media/first_image.93d570e0.jpg",
+    "static/media/img_avatar1.e20ca47f.png": "/Bootstrap-reactjs-Nasa/static/media/img_avatar1.e20ca47f.png",
+    "static/media/nasa-mars-940x550.e80e9779.jpg": "/Bootstrap-reactjs-Nasa/static/media/nasa-mars-940x550.e80e9779.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.590b97b4.js",
+    "static/js/2.19b62911.chunk.js",
+    "static/css/main.d9ecadf9.chunk.css",
+    "static/js/main.2bee5280.chunk.js"
+  ]
+}
