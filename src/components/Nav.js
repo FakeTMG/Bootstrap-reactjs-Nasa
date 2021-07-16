@@ -29,7 +29,7 @@ export class Nav extends Component {
             </li>
             <li>
               <Link to="/login">
-                <span className="glyphicon glyphicon-log-in"></span> Login
+                <span className="glyphicon glyphicon-log-in"></span> login
               </Link>
             </li>
           </ul>
