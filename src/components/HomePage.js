@@ -62,7 +62,7 @@ class HomePage extends Component {
               </li>
               <li>
                 <Link to="/login">
-                  <span className="glyphicon glyphicon-log-in"></span> login
+                  <span className="glyphicon glyphicon-log-in"></span> Login
                 </Link>
               </li>
             </ul>
