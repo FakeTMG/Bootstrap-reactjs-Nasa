@@ -27,14 +27,11 @@ function SingleHomePage({posts,searchTerm,first,second,third,fourth}) {
     
     
    `;
-
-    
     return (
         <div>
           <h3 className="test">
             See Some Nasa's Pictures From Mars taken by 'perseverance' !
           </h3>
-          
            <Carousel itemsToShow={1}>
                 
                 {isMobileDevice ? MobileImageItems.map((item) => (
