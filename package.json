@@ -1,6 +1,6 @@
 {
-  "homepage": "http://FakeTMG.github.io/Bootstrap-reactjs-Nasa",
-  "name": "movies-clonne",
+  "homepage":"https://faketmg.github.io/Bootstrap-reactjs-Nasa/",
+  "name": "Bootstrap-reactjs-Nasa",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
