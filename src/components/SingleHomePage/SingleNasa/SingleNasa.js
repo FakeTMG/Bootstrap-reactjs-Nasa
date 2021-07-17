@@ -1,15 +1,16 @@
 import React from 'react'
-
+import './style.css'
 function SingleNasa({val}) {
     return (
-        <div>
-            <div className="container containero col-xs-3" key={val.date}>
+        <div className="images-container">
+            <div className="  card" key={val.date}>
                 <img alt="" className="img-rounded" src={val.url} />
-                <h3 className="">{val.title}</h3>
-                 <h5 className="">{val.explanation}</h5>
-                <footer className="date">
-                          {val.date} {val.copyright}
-                </footer>
+                <h3 className="card-title">{val.title}</h3>
+                    <h5 className="card-body">{val.explanation}</h5>
+                    <footer className="date">
+                            {val.date} {val.copyright}
+                    </footer>
+
             </div>
             
         </div>
@@ -17,3 +18,4 @@ function SingleNasa({val}) {
 }
 
 export default SingleNasa
+
