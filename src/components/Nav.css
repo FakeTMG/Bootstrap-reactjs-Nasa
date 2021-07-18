@@ -1,0 +1,25 @@
+.nav{
+    background: #333;
+}
+.home{
+    margin-top:20px;
+    
+    
+    
+}
+.right{
+    display : flex;
+    margin-left: auto;
+    
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+.text {
+    text-decoration: none;
+}
+.search{
+    margin-left: 15px;
+    
+    margin-left: auto;
+    
+}

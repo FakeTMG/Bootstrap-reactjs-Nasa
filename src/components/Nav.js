@@ -1,55 +1,58 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-function NasaNav({isHomePage,creator,home,filterText}) {
+import './Nav.css'
+
+import * as ReactBootStrap from "react-bootstrap";
+import {
+    BrowserRouter as Router,
+    useHistory,
+    Link
+  } from "react-router-dom";
+
+function NasaNav({isHomePage,filterText,creator}) {
+  
   return (
-    <div style={{position: 'fixed',top:'0',width:'100%',zIndex:'100'}}>
-      <nav className="navbar navbar-inverse" >
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <a className="navbar-brand" href="/">
-              MohamedFM
-            </a>
-          </div>
-          <ul className="nav navbar-nav">
-            <li className={home}>
-              <Link to="/">Home</Link>
-            </li>
-            <li className={creator}>
-              <Link to="/creatorinfo">Creator info</Link>
-            </li>
-          </ul>
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <Link to="/login">
-                <span className="glyphicon glyphicon-user"></span> Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link to="/login">
-                <span className="glyphicon glyphicon-log-in"></span> login
-              </Link>
-            </li>
-            {isHomePage ? 
-              <form className="navbar-form navbar-left" action="/action_page.php">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search"
-                  onChange={filterText}
-                />
-                <div className="input-group-btn">
-                  <button className="btn btn-default" type="submit">
-                    <i className="glyphicon glyphicon-search"></i>
-                  </button>
-                </div>
-              </div>
-            </form>: null }
-          </ul>
+    <div className="App">
+            <ReactBootStrap.Navbar collapseOnSelect expand="xl" variant="dark" style={{backgroundColor:"#333",position: 'fixed',top:'0',width:'100%',zIndex:'100'}}>
+                    
+                    <Link to='/' className="home">
+                      <ReactBootStrap.Navbar.Brand ><h2>Home</h2></ReactBootStrap.Navbar.Brand>
+                    </Link>  
+                      
+                
+                    <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav right" />
+                    <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav right">
+                    <ReactBootStrap.Nav className="mr-auto right"> 
+                      <Link to="/creatorinfo" className="text">
+                          <ReactBootStrap.Nav.Link href="/creatorinfo" className={creator}>Creator Info</ReactBootStrap.Nav.Link>
+
+                      </Link>
+                      <Link to="/login"  className="text" >
+                          <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
+
+                      </Link>
+                      <Link to="/login"  className="text">
+                          <ReactBootStrap.Nav.Link href="/login">Sign Up</ReactBootStrap.Nav.Link>
+
+                      </Link>
+                      {isHomePage ? 
+                        <form className="search" >
+                        <div className="input-group">
+                          <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Search"
+                            onChange={filterText}
+                          />
+                          
+                        </div>
+                      </form>: null }
+                    </ReactBootStrap.Nav>
+                    <ReactBootStrap.Nav>
+                    
+                    </ReactBootStrap.Nav>
+                </ReactBootStrap.Navbar.Collapse>
+            </ReactBootStrap.Navbar>
         </div>
-      </nav>
-      
-    </div>
   )
 }
 

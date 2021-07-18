@@ -32,14 +32,16 @@ function SingleHomePage({posts,searchTerm,first,second,third,fourth}) {
           <h3 className="test">
             See Some Nasa's Pictures From Mars taken by 'perseverance' !
           </h3>
-           <Carousel itemsToShow={1}>
-                
-                {isMobileDevice ? MobileImageItems.map((item) => (
-                    <Item src ={item.title }key={item.id}/>)):
-                    ImageForPc.map((item) => (
-                  <Item src ={item.title }key={item.id}/>
-                ))}
-          </Carousel>
+          <div style={{zIndex:"200"}}>
+            <Carousel itemsToShow={1} >
+                  
+                  {isMobileDevice ? MobileImageItems.map((item) => (
+                      <Item src ={item.title }key={item.id}/>)):
+                      ImageForPc.map((item) => (
+                    <Item src ={item.title }key={item.id}/>
+                  ))}
+            </Carousel>
+          </div>
           
               <div>
                 <h1 className="test">Nasa News</h1>
