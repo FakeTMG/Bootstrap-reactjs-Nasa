@@ -48,7 +48,15 @@ function SingleHomePage({posts,searchTerm,first,second,third,fourth}) {
                 {
                 posts
                 .filter(val=>{
+                  if( val.title.toLowerCase().includes(searchTerm.toLowerCase())){
                     return val.title.toLowerCase().includes(searchTerm.toLowerCase())
+                    
+                  }else{
+                    
+                  }
+
+                    
+                    
                 }).map((val) => {
                     return (
                       <SingleNasa val={val} />

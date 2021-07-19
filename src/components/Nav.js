@@ -12,7 +12,7 @@ function NasaNav({isHomePage,filterText,creator}) {
   
   return (
     <div className="App">
-            <ReactBootStrap.Navbar collapseOnSelect expand="xl" variant="dark" style={{backgroundColor:"#333",position: 'fixed',top:'0',width:'100%',zIndex:'100'}}>
+            <ReactBootStrap.Navbar collapseOnSelect expand="xl" variant="dark" style={{backgroundColor:"#333"}}>
                     
                     <Link to='/' className="home">
                       <ReactBootStrap.Navbar.Brand ><h2>Home</h2></ReactBootStrap.Navbar.Brand>

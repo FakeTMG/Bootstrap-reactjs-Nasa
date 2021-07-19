@@ -6,7 +6,7 @@ class login extends Component {
     return (
       <div>
         <Nav />
-        <div class="container">
+        <div class="container" >
           <h3>Login / register Examples</h3>
           <p>Please enter your email / password as explained.</p>
           <p>Register</p>
