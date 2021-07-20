@@ -30,8 +30,8 @@ function NasaNav({isHomePage,filterText,creator}) {
                           <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
 
                       </Link>
-                      <Link to="/login"  className="text">
-                          <ReactBootStrap.Nav.Link href="/login">Sign Up</ReactBootStrap.Nav.Link>
+                      <Link to="/signup"  className="text">
+                          <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
 
                       </Link>
                       {isHomePage ? 
