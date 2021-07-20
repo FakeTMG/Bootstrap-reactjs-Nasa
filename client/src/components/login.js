@@ -1,18 +1,19 @@
 import React,{useState} from 'react'
-import Nav from "./Nav";
+import NasaNav from "./Nav";
 function Login() {
   const [login_email,Setlogin_email] = useState('')
   const [login_password,Setlogin_password] = useState('')
   const [sucessmessage,setSucessmessage] = useState(false)
   const [failuremessage,Setfailuremessage] = useState(false)
+  const [loggedin,Setloggedin] = useState(false)
   const SucessMessage = ()=>{
     return(
-        <div style={{backgroundColor :"#00FF00",marginBottom:"15px",borderRadius :"4px"}}><h2 style={{padding: "10px"}}>Login sucessfully</h2></div>
+        <div style={{backgroundColor :"#00FF00",marginBottom:"15px",borderRadius :"4px"}}><h4 style={{padding: "10px"}}>Login sucessfully</h4></div>
     )
   }
   const FailureMessage = ()=>{
       return(
-        <div style={{backgroundColor :"#F32013",marginBottom:"15px",borderRadius :"4px"}}> <h2 style={{padding: "10px"}}> Wrong email/password (email,password are required ) </h2> </div>
+        <div style={{backgroundColor :"#F32013",marginBottom:"15px",borderRadius :"4px"}}> <h4 style={{padding: "10px"}}> Wrong email/password (email,password are required ) </h4> </div>
       )
   }
   const submitLogin = async e => {
@@ -29,7 +30,10 @@ function Login() {
               console.log('login sucessfully')
               Setfailuremessage(false)
               setSucessmessage(true)
-              setTimeout(function(){ window.location = '/' }, 3000);
+              // Setloggedin(true)
+              localStorage.setItem('status','logged')
+              window.location = '/'
+              
 
           }else{
               console.log('failure')
@@ -47,7 +51,7 @@ function Login() {
     
     
       <div>
-        <Nav />
+        <NasaNav />
         <div class="container" >
           <h3>Login</h3>
           <p>Please enter your email / password as explained.</p>

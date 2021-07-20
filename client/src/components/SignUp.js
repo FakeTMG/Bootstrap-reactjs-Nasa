@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Nav from "./Nav";
+import NasaNav from "./Nav";
 function SignUp() {
     const [sign_email,Setsign_email] = useState('')
     const [sign_password,Setsign_password] = useState('')
@@ -7,13 +7,14 @@ function SignUp() {
     const [sucessmessage,setSucessmessage] = useState(false)
     const [failuremessage,Setfailuremessage] = useState(false)
     const SucessMessage = ()=>{
+      
         return(
-            <div style={{backgroundColor :"#00FF00",marginBottom:"15px",borderRadius :"4px"}}><h2 style={{padding: "10px"}}>Sign up sucessfully</h2></div>
+            <div style={{backgroundColor :"#00FF00",marginBottom:"15px",borderRadius :"4px"}}><h4 style={{padding: "10px"}}>Sign up sucessfully</h4></div>
         )
     }
     const FailureMessage = ()=>{
         return(
-           <div style={{backgroundColor :"#F32013",marginBottom:"15px",borderRadius :"4px"}}> <h2 style={{padding: "10px"}}>Use another email (email and password are necessary)</h2> </div>
+           <div style={{backgroundColor :"#F32013",marginBottom:"15px",borderRadius :"4px"}}> <h4 style={{padding: "10px"}}>Use another email (email and password are necessary)</h4> </div>
         )
     }
     const submitSignup = async e => {
@@ -46,7 +47,7 @@ function SignUp() {
     }
     return (
       <div>
-        <Nav />
+        <NasaNav />
         <div className='container'><p>Register</p>
         {sucessmessage ? <SucessMessage /> : ''}
         {failuremessage ? <FailureMessage /> : ''}

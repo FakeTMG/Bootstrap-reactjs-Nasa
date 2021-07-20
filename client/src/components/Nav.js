@@ -8,7 +8,14 @@ import {
     Link
   } from "react-router-dom";
 
-function NasaNav({isHomePage,filterText,creator}) {
+function NasaNav({isHomePage,filterText,creator,islogged}) {
+  const logout=()=>{
+    localStorage.clear()
+  }
+  
+  
+
+  
   
   return (
     <div className="App">
@@ -26,14 +33,26 @@ function NasaNav({isHomePage,filterText,creator}) {
                           <ReactBootStrap.Nav.Link href="/creatorinfo" className={creator}>Creator Info</ReactBootStrap.Nav.Link>
 
                       </Link>
-                      <Link to="/login"  className="text" >
-                          <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
+                      
+                      {
+                        localStorage.getItem('status')==='logged' ? <div>
+                          <Link to="/signup"  className="text" onClick={logout}>
+                              <ReactBootStrap.Nav.Link href="/signup">Logout</ReactBootStrap.Nav.Link>
 
-                      </Link>
-                      <Link to="/signup"  className="text">
-                          <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
+                          </Link>
+                        </div> : 
+                        <div style={{display: 'flex'}}>
+                          <Link to="/login"  className="text" >
+                              <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
 
-                      </Link>
+                          </Link>
+                          <Link to="/signup"  className="text">
+                              <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
+
+                          </Link>
+
+                        </div>
+                      }
                       {isHomePage ? 
                         <form className="search" >
                         <div className="input-group">
