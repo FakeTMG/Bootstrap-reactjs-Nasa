@@ -5,7 +5,7 @@ function Login() {
   const [login_password,Setlogin_password] = useState('')
   const [sucessmessage,setSucessmessage] = useState(false)
   const [failuremessage,Setfailuremessage] = useState(false)
-  const [loggedin,Setloggedin] = useState(false)
+  
   const SucessMessage = ()=>{
     return(
         <div style={{backgroundColor :"#00FF00",marginBottom:"15px",borderRadius :"4px"}}><h4 style={{padding: "10px"}}>Login sucessfully</h4></div>
@@ -16,6 +16,15 @@ function Login() {
         <div style={{backgroundColor :"#F32013",marginBottom:"15px",borderRadius :"4px"}}> <h4 style={{padding: "10px"}}> Wrong email/password (email,password are required ) </h4> </div>
       )
   }
+  const Notconnected = ()=>{
+    setTimeout(function(){ 
+      document.getElementById("myDIV").style.display = "none";  
+      localStorage.removeItem('fromnasa')
+    }, 3000);
+    return(
+      <div id="myDIV" style={{backgroundColor :"#ff7f00",marginBottom:"15px",borderRadius :"4px"}}> <h4 style={{padding: "10px"}}> You need to connect to add your fav posts </h4> </div>
+    )
+}
   const submitLogin = async e => {
         e.preventDefault();
         try {
@@ -24,15 +33,17 @@ function Login() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
-          });
-          console.log(response)
+          })
+          
           if(response.ok){
               console.log('login sucessfully')
               Setfailuremessage(false)
               setSucessmessage(true)
               // Setloggedin(true)
               localStorage.setItem('status','logged')
-              window.location = '/'
+              localStorage.setItem('user_email',login_email)
+              window.location =  '/'
+              
               
 
           }else{
@@ -60,6 +71,7 @@ function Login() {
           
 
           <p>Login</p>
+          {localStorage.getItem('fromnasa')==='notconnected' ? <Notconnected /> : ''}
           {sucessmessage ? <SucessMessage /> : ''}
           {failuremessage ? <FailureMessage /> : ''}
           <form>

@@ -31,7 +31,7 @@ function SignUp() {
               console.log('signup sucessfully')
               Setfailuremessage(false)
               setSucessmessage(true)
-              setTimeout(function(){ window.location = '/login' }, 3000);
+              window.location =  '/login'
 
           }else{
               console.log('failure')

@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import Login from './components/login';
 import WrongPage from './components/WrongPage';
 import SignUp from './components/SignUp';
+import Favorite from './components/Fav/Favorite';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/fav" component={Favorite} />
+
 
           <Route path="/" exact component={HomePage} />
           <Route path="/creatorinfo" component={CreatorInfo} />

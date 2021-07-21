@@ -33,6 +33,10 @@ function NasaNav({isHomePage,filterText,creator,islogged}) {
                           <ReactBootStrap.Nav.Link href="/creatorinfo" className={creator}>Creator Info</ReactBootStrap.Nav.Link>
 
                       </Link>
+                      <Link to="/fav" className="text">
+                          <ReactBootStrap.Nav.Link href="/fav">favorite NASA posts</ReactBootStrap.Nav.Link>
+
+                      </Link>
                       
                       {
                         localStorage.getItem('status')==='logged' ? <div>
