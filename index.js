@@ -4,7 +4,7 @@ const cors = require("cors");
 const pool = require("./db");
 
 app.use(cors());
-app.use(express.json()); //req.body
+app.use(express.json()); 
 
 app.post('/signup',async(req,res)=>{
     try{
@@ -55,6 +55,43 @@ app.post('/login',async(req,res)=>{
     
    
 })
+app.post('/',async(req,res)=>{
+    try{
+        const {title,url,explanation,date,user_email} = req.body
+        const addTofav = await pool.query(
+            "INSERT INTO user_posts (post_title,post_image,post_description,post_footer,email) VALUES($1,$2,$3,$4,$5) RETURNING *",
+            [title,url,explanation,date,user_email]
+          );
+        res.json(addTofav.rows[0])  
+
+    }catch(err){
+        console.log(err.message)
+
+    }
+})
+app.post('/fav',async(req,res)=>{
+    try{
+        const {user_email} =  req.body
+        const getFav =  await pool.query('SELECT post_id,post_title,post_image,post_description,post_footer FROM user_posts WHERE  email=$1 ',[user_email])
+        res.json(getFav.rows)
+
+
+    }catch(err){
+        consle.log(err.message)
+
+    }
+})
+app.delete("/fav/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const deleteTodo = await pool.query("DELETE FROM user_posts WHERE post_id= $1", [
+        id
+      ]);
+      res.json("Todo was deleted!");
+    } catch (err) {
+      console.log(err.message);
+    }
+  });
 app.listen(5000, () => {
     console.log("server has started on port 5000");
   });
