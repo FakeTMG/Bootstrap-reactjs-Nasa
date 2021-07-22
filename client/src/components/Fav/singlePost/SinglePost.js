@@ -1,7 +1,9 @@
 import React from 'react'
 import './singlePost.css'
-function SinglePost({val}) {
-    const{post_id,post_title,post_description,post_image,post_footer} =  val
+function SinglePost({val,delete_post}) {
+    
+    
+    
     
     return (
         
@@ -19,6 +21,9 @@ function SinglePost({val}) {
                                     {val.post_footer} 
                             </footer>
                             
+                            <i class="fa fa-trash-o" style={{fontSize:"48px",color:"red",cursor:"pointer"}}  onClick={delete_post} ></i>
+                            
+                        
                             
                         </div>
 
