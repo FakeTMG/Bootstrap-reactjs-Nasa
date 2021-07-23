@@ -6,6 +6,7 @@ import Login from './components/login';
 import WrongPage from './components/WrongPage';
 import SignUp from './components/SignUp';
 import Favorite from './components/Fav/Favorite';
+import ChangePass from './components/ChangePass';
 
 function App() {
   return (
@@ -15,11 +16,13 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/fav" component={Favorite} />
+          {
+            localStorage.getItem('status')==='logged' ? <Route path="/change_pass" component={ChangePass} /> :<Route path="/" component={WrongPage} />
+          }
 
 
           <Route path="/" exact component={HomePage} />
-          <Route path="/creatorinfo" component={CreatorInfo} />
-          <Route path="/" component={WrongPage} />
+          
         </Switch>
       </div>
     </Router>

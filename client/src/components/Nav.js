@@ -8,7 +8,7 @@ import {
     Link
   } from "react-router-dom";
 
-function NasaNav({isHomePage,filterText,creator,islogged}) {
+function NasaNav({home,filterText,creator,register,login,isHomePage}) {
   const logout=()=>{
     localStorage.clear()
   }
@@ -18,64 +18,96 @@ function NasaNav({isHomePage,filterText,creator,islogged}) {
   
   
   return (
-    <div className="App">
-            <ReactBootStrap.Navbar collapseOnSelect expand="xl" variant="dark" style={{backgroundColor:"#333"}}>
+    <div
+        
+      >
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div className="container-fluid">
+            
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link
+                    className={`${home} nav-link`}
+                    aria-current="page"
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className={`${creator} nav-link`} to="fav">
+                    fav posts
+                  </Link>
+                </li>
+               
+              </ul>
+              {isHomePage ? (
+                <form className="d-flex">
+                  <input
+                    className="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    onChange={filterText}
+                  />
+                  
+                </form>
+              ) : null}
+              <ul className="navbar-nav mb-2 mb-lg-0">
+                {localStorage.getItem("status") === "logged" ? (
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {localStorage.getItem("user_email")}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/" onClick={logout}>Logout</a>
+                    <a class="dropdown-item" href="/change_pass">change password</a>
                     
-                    <Link to='/' className="home">
-                      <ReactBootStrap.Navbar.Brand ><h2>Home</h2></ReactBootStrap.Navbar.Brand>
-                    </Link>  
-                      
-                
-                    <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav right" />
-                    <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav right">
-                    <ReactBootStrap.Nav className="mr-auto right"> 
-                      <Link to="/creatorinfo" className="text">
-                          <ReactBootStrap.Nav.Link href="/creatorinfo" className={creator}>Creator Info</ReactBootStrap.Nav.Link>
-
+                  </div>
+                </li>
+                ) : (
+                  <div style={{display:"flex"}}>
+                    <li className="nav-item">
+                      <Link
+                        className={`${register} nav-link`}
+                        to="signup"
+                        tabindex="-1"
+                        aria-disabled="true"
+                      >
+                        Sign Up
                       </Link>
-                      <Link to="/fav" className="text">
-                          <ReactBootStrap.Nav.Link href="/fav">favorite NASA posts</ReactBootStrap.Nav.Link>
-
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        className={`${login} nav-link`}
+                        to="login"
+                        tabindex="-1"
+                        aria-disabled="true"
+                      >
+                        Login
                       </Link>
-                      
-                      {
-                        localStorage.getItem('status')==='logged' ? <div>
-                          <Link to="/signup"  className="text" onClick={logout}>
-                              <ReactBootStrap.Nav.Link href="/signup">Logout</ReactBootStrap.Nav.Link>
-
-                          </Link>
-                        </div> : 
-                        <div style={{display: 'flex'}}>
-                          <Link to="/login"  className="text" >
-                              <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
-
-                          </Link>
-                          <Link to="/signup"  className="text">
-                              <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
-
-                          </Link>
-
-                        </div>
-                      }
-                      {isHomePage ? 
-                        <form className="search" >
-                        <div className="input-group">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Search"
-                            onChange={filterText}
-                          />
-                          
-                        </div>
-                      </form>: null }
-                    </ReactBootStrap.Nav>
-                    <ReactBootStrap.Nav>
-                    
-                    </ReactBootStrap.Nav>
-                </ReactBootStrap.Navbar.Collapse>
-            </ReactBootStrap.Navbar>
-        </div>
+                    </li>
+                    </div>
+                )}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
   )
 }
 

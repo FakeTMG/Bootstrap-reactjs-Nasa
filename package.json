@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "md5": "^2.3.0",
     "react-expire": "^1.0.2"
   }
 }

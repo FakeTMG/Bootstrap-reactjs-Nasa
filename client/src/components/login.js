@@ -18,8 +18,9 @@ function Login() {
   }
   const Notconnected = ()=>{
     setTimeout(function(){ 
-      document.getElementById("myDIV").style.display = "none";  
       localStorage.removeItem('fromnasa')
+      
+      
     }, 3000);
     return(
       <div id="myDIV" style={{backgroundColor :"#ff7f00",marginBottom:"15px",borderRadius :"4px"}}> <h4 style={{padding: "10px"}}> You need to connect to add your fav posts </h4> </div>
@@ -61,7 +62,7 @@ function Login() {
   return (
     
     
-      <div>
+      <div style={{marginTop :"8rem"}}>
         <NasaNav />
         <div class="container" >
           <h3>Login</h3>
