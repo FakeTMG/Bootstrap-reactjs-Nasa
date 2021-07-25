@@ -7,7 +7,7 @@ import WrongPage from './components/WrongPage';
 import SignUp from './components/SignUp';
 import Favorite from './components/Fav/Favorite';
 import ChangePass from './components/ChangePass';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <Router>
@@ -16,12 +16,14 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
           <Route path="/fav" component={Favorite} />
+          <Route path="/" exact component={HomePage} />
           {
-            localStorage.getItem('status')==='logged' ? <Route path="/change_pass" component={ChangePass} /> :<Route path="/" component={WrongPage} />
+            localStorage.getItem('status')==='logged' ? <Route path="/change_pass" component={ChangePass} /> :<Route path="/"  component={WrongPage} />
           }
 
 
-          <Route path="/" exact component={HomePage} />
+          
+          <Route path="/" component={WrongPage} />
           
         </Switch>
       </div>

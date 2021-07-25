@@ -15,7 +15,7 @@ function SinglePost({val,delete_post}) {
                 <div className="card" key={val.post_footer}>
                     <img alt="" className="img-rounded" src={val.post_image} />
                     <h3 className="card-title" >{val.post_title}</h3>
-                        <h5 className="card-body">{val.post_description}</h5>
+                        <p className="card-body">{val.post_description}</p>
                         <div className="footer">
                             <footer className="date">
                                     {val.post_footer} 

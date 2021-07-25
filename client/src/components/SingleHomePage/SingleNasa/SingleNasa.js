@@ -17,6 +17,9 @@ function SingleNasa({val}) {
                     body: JSON.stringify(body)
                 })
                 console.log(response)
+                const btn  = document.getElementById('btn')
+                btn.remove();
+                document.getElementById('ptag').textContent = 'go to fav'
 
             }catch(e){
                 console.log(e.message)
@@ -39,8 +42,9 @@ function SingleNasa({val}) {
                                     {val.date} {val.copyright}
                             </footer>
                             <div>
-                                <a  title="Love it" class="btn" data-count="0" onClick={Addtofav}><span>&#x2764;</span></a>
-                            </div>
+                                <a  title="Love it" class="btn" data-count="0" id="btn" onClick={Addtofav}><span>&#x2764;</span></a>
+                                <a id='ptag' href='/fav'></a>
+                            </div> 
                         </div>
 
                 </div>

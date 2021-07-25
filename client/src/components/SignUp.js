@@ -46,7 +46,7 @@ function SignUp() {
     
     }
     return (
-      <div  style={{marginTop :"8rem"}}>
+      <div >
         <NasaNav />
         <div className='container'><p>Register</p>
         {sucessmessage ? <SucessMessage /> : ''}

@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import NasaNav from "./Nav";
+import CryptoAES from 'crypto-js/aes'
+import CryptoENC from 'crypto-js/enc-utf8';
 function Login() {
   const [login_email,Setlogin_email] = useState('')
   const [login_password,Setlogin_password] = useState('')
@@ -43,7 +45,11 @@ function Login() {
               // Setloggedin(true)
               localStorage.setItem('status','logged')
               localStorage.setItem('user_email',login_email)
-              window.location =  '/'
+              window.location = '/'
+                
+              
+              
+              
               
               
 
@@ -62,7 +68,7 @@ function Login() {
   return (
     
     
-      <div style={{marginTop :"8rem"}}>
+      <div>
         <NasaNav />
         <div class="container" >
           <h3>Login</h3>
